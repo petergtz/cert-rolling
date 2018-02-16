@@ -1,0 +1,43 @@
+variables:
+  - name: the_ca
+    type: certificate
+    options:
+      is_ca: true
+      common_name: internalCA
+
+  - name: the_ca_new
+    type: certificate
+    options:
+      is_ca: true
+      common_name: internalCA
+
+  - name: server
+    type: certificate
+    options:
+      ca: the_ca
+      common_name: bla
+      alternative_names: [127.0.0.1]
+
+  - name: server_new
+    type: certificate
+    options:
+      ca: the_ca_new
+      common_name: bla
+      alternative_names: [127.0.0.1]
+
+  - name: client
+    type: certificate
+    options:
+      ca: the_ca
+      common_name: bla
+      alternative_names: [127.0.0.1]
+      extended_key_usage:
+        - client_auth
+
+  - name: client_new
+    type: certificate
+    options:
+      ca: the_ca_new
+      common_name: bla
+      alternative_names: [127.0.0.1]
+
