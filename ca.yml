@@ -40,4 +40,6 @@ variables:
       ca: the_ca_new
       common_name: bla
       alternative_names: [127.0.0.1]
+      extended_key_usage:
+        - client_auth
 
